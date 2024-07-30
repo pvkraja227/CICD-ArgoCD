@@ -1,4 +1,4 @@
-### myImageTag
+### replaceImageTag
 
 apiVersion: apps/v1
 kind: Deployment
@@ -18,6 +18,6 @@ spec:
     spec:
       containers:
       - name: spring-boot-app
-        image: rajapvk23/ultimate-cicd:myImageTag
+        image: rajapvk23/ultimate-cicd:replaceImageTag
         ports:
         - containerPort: 8080
