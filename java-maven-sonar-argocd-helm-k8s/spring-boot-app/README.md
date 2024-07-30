@@ -5,7 +5,9 @@ sudo apt install maven
 (SonarQube Server locally)
 
 sudo su -
+
 adduser sonarqube
+
 sudo su - sonarqube
 
 wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.4.0.54424.zip
@@ -27,6 +29,7 @@ Jenkins Dashboard:
 Manage Jenkins/Plugins/Available Plugins: Docker Pipeline and SonarQube scanner
 
 Manage Jenkins/Manage credentials/system/global/add 1. github 2. sonarqube 3. docker
+
 Jenkins/restart
 
 Pipeline/scm/git/Jenkinsfile/apply
