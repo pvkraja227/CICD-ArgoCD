@@ -9,7 +9,7 @@ pipeline {
     stage('Checkout') {
       steps {
         sh 'echo passed'
-        //git branch: 'main', url: 'https://github.com/Krishna227227/Jenkins-Abhishek.git'
+        //git branch: 'main', url: 'https://github.com/pvkraja227/CICD-ArgoCD.git'
       }
     }
     stage('Build and Test') {
@@ -47,14 +47,14 @@ pipeline {
     }
     stage('Update Deployment File') {
         environment {
-            GIT_REPO_NAME = "Jenkins-Abhishek"
-            GIT_USER_NAME = "Krishna227227"
+            GIT_REPO_NAME = "CICD-ArgoCD"
+            GIT_USER_NAME = "pvkraja227"
         }
         steps {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                 sh '''
-                    git config user.email "pandikrishna092@gmail.com"
-                    git config user.name "Krishna227227"
+                    git config user.email "venkat.klce227@gmail.com"
+                    git config user.name "pvkraja227"
                     BUILD_NUMBER=${BUILD_NUMBER}
                     sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
                     git add java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
