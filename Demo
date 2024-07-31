@@ -7,9 +7,9 @@ kubectl get pods -n argocd
 kubectl get svc -n argocd
 
 kubectl edit svc -n argocd argocd-server (change ClusterIP to NodePort)
-kubectl get svc -n argocd (chrome: ec2publicIP:NodePortIP)
+kubectl get svc -n argocd (chrome: ec2publicIP:NodePortIP --> to get ArgoCD Dashboard)
 
-OR OR kubectl port-forward svc/argocd-server 8080:443 --address 0.0.0.0 & (chrome: ec2publicIP:8080)
+OR OR kubectl port-forward svc/argocd-server 8080:443 --address 0.0.0.0 & (chrome: ec2publicIP:8080 --> to get ArgoCD Dashboard)
 
 kubectl get secret -n argocd
 kubectl get secret -n argocd argocd-initial-admin-secret -o yaml (copy encrypted secret)
@@ -34,7 +34,7 @@ create
 
 kubectl get svc -n argocd
 
-chrome: ec2publicIP:spring-boot-app NodePort
+chrome: ec2publicIP:spring-boot-app NodePort --> to get app
 
 
 
