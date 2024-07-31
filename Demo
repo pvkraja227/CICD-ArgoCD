@@ -1,1 +1,42 @@
-DevOps
+### Google: argocd install (goto official document) --> open: search: install argoCD
+
+kubectl create ns argocd
+curl -sSfL https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml | kubectl apply -n argocd -f -
+
+kubectl get pods -n argocd
+kubectl get svc -n argocd
+
+kubectl edit svc -n argocd argocd-server (change ClusterIP to NodePort)
+kubectl get svc -n argocd (chrome: ec2publicIP:NodePortIP)
+
+OR OR kubectl port-forward svc/argocd-server 8080:443 --address 0.0.0.0 & (chrome: ec2publicIP:8080)
+
+kubectl get secret -n argocd
+kubectl get secret -n argocd argocd-initial-admin-secret -o yaml (copy encrypted secret)
+echo <encrypted secret> | base64 -d
+
+### ArgoCD Dashboard:
+
+User: admin
+Pwd: <decrypted secret>
+
+name: default
+project: default
+syn policy: automatic (check Prune and Self Heal)
+
+Source: Repository URL: 
+path: where yaml manifest are there
+
+destination: url: https://kubernetes.default.svc
+namespace: argocd
+
+create
+
+kubectl get svc -n argocd
+
+chrome: ec2publicIP:spring-boot-app NodePort
+
+
+
+
+
