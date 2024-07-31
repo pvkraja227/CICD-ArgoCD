@@ -13,7 +13,7 @@ curl -fsSL https://pkg.jenkins.io/debian/jenkins.io-2023.key | sudo tee /usr/sha
 
 echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
 
-// sudo apt-get update
+// sudo apt-get update (optional)
 
 sudo apt-get install jenkins
 
@@ -27,9 +27,9 @@ sudo systemctl start jenkins
 
 (Install Plugins)
 
-(Run the below command to Install Docker)
+### (Run the below command to Install Docker)
 
-sudo apt update (optional)
+// sudo apt update (optional)
 
 sudo apt install docker.io
  
