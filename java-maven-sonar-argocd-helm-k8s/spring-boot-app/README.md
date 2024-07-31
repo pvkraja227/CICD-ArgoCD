@@ -28,9 +28,9 @@ Jenkins Dashboard:
 
 Manage Jenkins/Plugins/Available Plugins: Docker Pipeline and SonarQube scanner
 
-Manage Jenkins/Manage credentials/system/global/add 1. github 2. sonarqube 3. docker
+Manage Jenkins/Manage credentials/system/global/add 1. github (secret text) 2. sonarqube (secret text) 3. docker (user name and password)
 
-Jenkins/restart
+Jenkins dashboard/restart
 
 Pipeline/scm/git/Jenkinsfile/apply
 
