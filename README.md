@@ -42,3 +42,43 @@ usermod -aG docker jenkins
 usermod -aG docker ubuntu
 
 systemctl restart docker
+
+### Install Maven and Unzip
+
+sudo apt install unzip
+
+sudo apt install maven
+
+### (SonarQube Server locally)
+
+sudo su -
+
+adduser sonarqube
+
+sudo su - sonarqube
+
+wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.4.0.54424.zip
+
+unzip sonarqube-9.4.0.54424.zip
+
+chmod -R 755 /home/sonarqube/sonarqube-9.4.0.54424
+
+chown -R sonarqube:sonarqube /home/sonarqube/sonarqube-9.4.0.54424
+
+cd sonarqube-9.4.0.54424/bin/linux-x86-64/
+
+./sonar.sh start
+
+### (Access the SonarQube Server on http://<ip-address>:9000&& generate token)
+
+### Jenkins Dashboard:
+
+Manage Jenkins/Plugins/Available Plugins: Docker Pipeline and SonarQube scanner
+
+Manage Jenkins/Manage credentials/system/global/add 1. github (secret text) 2. sonarqube (secret text) 3. docker (user name and password)
+
+Jenkins dashboard/restart
+
+Pipeline/scm/git/Jenkinsfile/apply
+
+Buildnow
