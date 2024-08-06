@@ -31,7 +31,7 @@ sudo systemctl start jenkins
 
 sudo apt install docker.io
  
-(Grant Jenkins user and Ubuntu user permission to docker deamon)
+(Grant Jenkins user and Ubuntu user permission to docker daemon)
 
 sudo su - 
 
