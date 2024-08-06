@@ -1,11 +1,14 @@
+take new ec2
 
-### (Install Java)
+(Install Java)
 
 sudo apt update
 
 sudo apt install fontconfig openjdk-17-jre
 
 java -version
+
+(Install Jenkins)
 
 sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
   https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
@@ -27,6 +30,8 @@ sudo systemctl start jenkins
 
 ### (Run the below command to Install Docker)
 
+(Install Docker)
+
 // sudo apt update (optional)
 
 sudo apt install docker.io
@@ -41,13 +46,13 @@ usermod -aG docker ubuntu
 
 systemctl restart docker
 
-### Install Maven and Unzip
+(Install Maven and Unzip)
 
 sudo apt install unzip
 
 sudo apt install maven
 
-### (SonarQube Server locally)
+(Install SonarQube)
 
 sudo su -
 
