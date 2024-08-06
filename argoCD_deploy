@@ -1,3 +1,5 @@
+take new ec2
+
 (Install Microk8s)
 
 sudo snap install microk8s --classic
@@ -13,6 +15,8 @@ sudo su - ubuntu
 alias kubectl='microk8s kubectl'
 
 kubectl get nodes (1)
+
+(Install ArgoCD)
 
 ### Google: argocd install (goto official document) --> open: search: install argoCD
 
