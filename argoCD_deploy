@@ -1,3 +1,19 @@
+(Insatll Microk8s)
+
+sudo snap install microk8s --classic
+
+microk8s status --wait-ready
+
+sudo usermod -a -G microk8s ubuntu
+
+sudo su - root
+
+sudo su - ubuntu
+
+alias kubectl='microk8s kubectl'
+
+kubectl get nodes (1)
+
 ### Google: argocd install (goto official document) --> open: search: install argoCD
 
 kubectl create ns argocd
