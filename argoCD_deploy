@@ -36,7 +36,7 @@ kubectl get svc -n argocd (chrome: ec2publicIP:NodePortIP --> advanced --> proce
 
 2. kubectl port-forward svc/argocd-server 8080:443 --address 0.0.0.0 & (chrome: ec2publicIP:8080 --> to get ArgoCD Dashboard)
 
-kubectl get secret -n argocd
+kubectl get secrets -n argocd
 
 kubectl get secret -n argocd argocd-initial-admin-secret -o yaml (copy encrypted secret)
 
