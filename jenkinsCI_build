@@ -58,6 +58,8 @@ sudo su -
 
 adduser sonarqube
 
+cat /etc/passwd (to find users)
+
 sudo su - sonarqube
 
 wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.4.0.54424.zip
